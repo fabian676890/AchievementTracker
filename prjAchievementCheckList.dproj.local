@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/06/29 13:13:17.000.095,=C:\Users\Nicholas\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/06/29 13:13:46.000.652,D:\Programming Achievement\uAchievementShower.dfm=C:\Users\Nicholas\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2020/06/29 13:13:46.000.652,D:\Programming Achievement\uAchievementShower.pas=C:\Users\Nicholas\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/06/29 13:14:04.000.019,D:\Programming Achievement\prjAchievementCheckList.dproj=C:\Users\Nicholas\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2020/06/30 21:00:47.000.551,=C:\Users\Nicholas\Downloads\chilkat-9.5.0-delphi\chilkat-9.5.0-delphi\HtmlToXml.pas</Transaction>
+    <Transaction>2020/06/30 21:01:18.000.515,C:\Users\Nicholas\Downloads\chilkat-9.5.0-delphi\chilkat-9.5.0-delphi\HtmlToXml.pas=D:\Programming Achievement\HtmlToXml.pas</Transaction>
+    <Transaction>2020/06/30 21:05:09.000.049,=D:\Programming Achievement\ChilkatDelphi32.dll</Transaction>
+    <Transaction>2020/06/30 21:05:10.000.537,=D:\Programming Achievement\ChilkatDelphi64.dll</Transaction>
+    <Transaction>2020/06/30 21:05:10.000.549,=D:\Programming Achievement\chilkatDllPath.inc</Transaction>
+    <Transaction>2020/07/01 14:11:10.000.082,D:\Programming Achievement\HtmlToXml.pas=</Transaction>
+    <Transaction>2020/07/01 14:11:10.000.004,D:\Programming Achievement\ChilkatDelphi32.dll=</Transaction>
+    <Transaction>2020/07/01 14:11:10.000.075,D:\Programming Achievement\ChilkatDelphi64.dll=</Transaction>
+    <Transaction>2020/07/01 14:11:10.000.081,D:\Programming Achievement\chilkatDllPath.inc=</Transaction>
+    <Transaction>2020/07/01 14:12:37.000.868,=D:\Programming Achievement\DataConnector.pas</Transaction>
+    <Transaction>2020/07/01 14:12:38.000.019,=D:\Programming Achievement\DataHandler.pas</Transaction>
+    <Transaction>2020/07/02 15:50:46.000.083,=D:\Programming Achievement\Unit1.pas</Transaction>
+    <Transaction>2020/07/02 15:53:26.000.926,D:\Programming Achievement\Unit1.dfm=D:\Programming Achievement\uEnterURL.dfm</Transaction>
+    <Transaction>2020/07/02 15:53:26.000.926,D:\Programming Achievement\Unit1.pas=D:\Programming Achievement\uEnterURL.pas</Transaction>
+    <Transaction>2020/07/02 18:00:52.000.264,=D:\Programming Achievement\Unit1.pas</Transaction>
+    <Transaction>2020/07/02 18:02:16.000.380,D:\Programming Achievement\Unit1.pas=D:\Programming Achievement\uAchievementDetails.pas</Transaction>
+    <Transaction>2020/07/02 18:02:16.000.381,D:\Programming Achievement\Unit1.dfm=D:\Programming Achievement\uAchievementDetails.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

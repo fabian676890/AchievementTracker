@@ -10,9 +10,12 @@
 
 
 Plans for v1.1
--
--
--
--
--
--
+- Add new custom ListView and change how game title look like
+- Add 'traffic lights', determine if all the achievements for a game are completed then if they are:
+  - Green  for completed
+  - Amber for still in progress
+  - Red for not started
+- Possibly add a different view that will support game covers
+- Possibly add headers to separte game achievements from DLC achievements
+- Add sorting to the view
+- Add Filtering to the view

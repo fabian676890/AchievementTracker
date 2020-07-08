@@ -1,10 +1,18 @@
-- Added DataHandler and DataConnector capable of connecting to the database.
-    - Can connect to a local database using the database sql provided. To make database the user needs to download and install Xampp
-- Added a listview with several columns to be able to show what is inside the database.
-- Added functionality to get source html from a provided URL and strip the Name of the game, Achievement name and description.
-    - Only able to use URL from trueachievements.com
-- Added functionality to take that data and put it into its own class and then proceed to insert it into the database.
-- Added functionality to show games first and then if a game is clicked, the games respective achievements will load.
+- Added DataHandler and DataConnector capable of connecting to a local instance of MySQL database hosted through XAMPP.
+- Provided a Database Schema to import into MySQL containing all necessary 
+- Added capability to display data from database in a listview.
+- Added functionality to get source html from a provided URL (needs to be a https://www.trueachievements.com/ url) and.
+- Added ability of organising the data retrieved, for display in the application.
+- Added ability of storing the data retrieved into the database.
+- Added a main screen displaying all the games, and a secondary screen showing all the achievements.
 - Added a back button to go inbetween the games screen and achievements screen.
-- Added some class changes to speed up the loading of sql drastically.
-- Added a seperate form to set certain achievements to done or not. 
+- Added ability to mark achievements as done/not done.
+
+
+Plans for v1.1
+-
+-
+-
+-
+-
+-

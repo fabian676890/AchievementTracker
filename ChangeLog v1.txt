@@ -1,0 +1,8 @@
+- Added DataHandler and DataConnector capable of connecting to the database.
+- Added a listview with several columns to be able to show what is inside the database.
+- Added functionality to get source html from a provided URL and strip the Name of the game, Achievement name and description.
+- Added functionality to take that data and put it into its own class and then proceed to insert it into the database.
+- Added functionality to show games first and then if a game is clicked, the games respective achievements will load.
+- Added a back button to go inbetween the games screen and achievements screen.
+- Added some class changes to speed up the loading of sql drastically.
+- Added a seperate form to set certain achievements to done or not. 

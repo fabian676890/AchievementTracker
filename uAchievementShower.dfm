@@ -26,8 +26,7 @@ object AchievementTracker: TAchievementTracker
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitHeight = 612
-    object lvAchievements: TListView
+    object lvAchievements: TSMListView
       Left = 0
       Top = 0
       Width = 1281
@@ -35,18 +34,24 @@ object AchievementTracker: TAchievementTracker
       Align = alClient
       Columns = <
         item
-          Width = 200
+          Width = 500
         end
         item
-          Width = 1027
         end
         item
         end>
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       PopupMenu = PopupMenu
+      ReadOnly = False
+      TabStop = True
       TabOrder = 0
       ViewStyle = vsReport
       OnClick = lvAchievementsClick
-      ExplicitHeight = 612
     end
   end
   object Panel2: TPanel

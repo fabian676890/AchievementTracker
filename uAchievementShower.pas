@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, MSHTML, Vcl.ComCtrls,
-  Vcl.ExtCtrls, Generics.Collections, DataHandler, Vcl.Menus, uEnterURL;
+  Vcl.ExtCtrls, Generics.Collections, DataHandler, Vcl.Menus, uEnterURL,
+  SMListView;
 
 type
   TAchievement = class;
@@ -15,7 +16,6 @@ type
   TAchievementList = class;
   TAchievementTracker = class(TForm)
     Panel1: TPanel;
-    lvAchievements: TListView;
     MainMenu: TMainMenu;
     miAddGame: TMenuItem;
     miOptions: TMenuItem;
@@ -25,6 +25,7 @@ type
     Button1: TButton;
     ProgressBar: TProgressBar;
     StatusBar: TStatusBar;
+    lvAchievements: TSMListView;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure lvAchievementsClick(Sender: TObject);
@@ -137,6 +138,8 @@ begin
  gameList := TGameList.Create;
 
  gameView := true;
+
+ //lvAchievements.Items.
 end;
 
 
@@ -152,6 +155,7 @@ procedure TAchievementTracker.FormShow(Sender: TObject);
 begin
   lvAchievements.Column[1].Width := 0;
   lvAchievements.Column[2].Width := 0;
+  lvAchievements.Title := true;
   gameList.Load;
   LoadListView;
 end;
@@ -166,13 +170,13 @@ const
 begin
   gameView := true;
   lvAchievements.Items.Clear;
-
+//
   for i := 0 to gameList.Games.Count -1 do begin
     Itm := lvAchievements.Items.Add;
     Itm.Caption := gameList.Games[i].GameName;
     Itm.SubItems.Add(IntToStr(gameList.Games[i].GameID));
   end;
-
+//
   StatusBar.Panels[0].Text := cText + IntToStr(gameList.Games.Count) + cTextpt2;
 end;
 
@@ -240,7 +244,7 @@ var
   //j : integer;
 begin
   selectedAchievement := TAchievement.Create;
-  detailsForm := TChangeDetailsForm.Create(nil);
+  //detailsForm := TChangeDetailsForm.Create(nil);
 
   try
     if lvAchievements.Selected <> nil then begin
@@ -258,7 +262,7 @@ begin
           detailsForm.ShowModal;
           LoadAchievements(true, selectedAchievement.fGameID);
         finally
-          detailsForm.Free;
+          //detailsForm.Free;
         end;
       end;
     end;
@@ -296,6 +300,8 @@ begin
       else
         Itm.SubItems.Add(cNotDone);
     end;
+    lvAchievements.Title := false;
+    lvAchievements.Column[0].Width := 200;
     lvAchievements.Column[1].Width := 1020;
     lvAchievements.Column[2].Width := 40;
     FreeAndNil(Itm);
@@ -336,9 +342,10 @@ end;
 
 procedure TAchievementTracker.miBackClick(Sender: TObject);
 begin
+  lvAchievements.Title := true;
+  lvAchievements.Column[0].Width := 500;
   lvAchievements.Column[1].Width := 0;
   lvAchievements.Column[2].Width := 0;
-  gameList.Load;
   LoadListView;
 end;
 
@@ -558,7 +565,18 @@ begin
 end;
 
 destructor TGameList.Destroy;
+
+  procedure ClearGames;
+  var
+    tmp : TGame;
+  begin
+    for tmp in fGames do
+      tmp.Free;
+    fGames.Clear;
+  end;
+
 begin
+  ClearGames;
   FreeAndNil(fGames);
   FreeAndNil(dh);
   inherited;
@@ -568,23 +586,18 @@ procedure TGameList.Load;
 var
   tempGame : TGame;
 begin
-  tempGame := TGame.Create;
   self.Games.Clear;
-  try
-    dh.SQLText := 'SELECT * '+
-                  'FROM games';
-    if dh.DoSelect > 0 then begin
-      dh.First;
-      while not dh.Eof do begin
-        tempGame.fGameID := dh.FieldByName('GameID').AsInteger;
-        tempGame.fGameName := dh.FieldByName('GameName').AsString;
-        Games.Add(tempGame);
-        tempGame := TGame.Create;
-        dh.Next;
-      end;
+  dh.SQLText := 'SELECT * '+
+                'FROM games';
+  if dh.DoSelect > 0 then begin
+    dh.First;
+    while not dh.Eof do begin
+      tempGame := TGame.Create;
+      tempGame.fGameID := dh.FieldByName('GameID').AsInteger;
+      tempGame.fGameName := dh.FieldByName('GameName').AsString;
+      Games.Add(tempGame);
+      dh.Next;
     end;
-  finally
-    FreeAndNil(tempGame);
   end;
 end;
 
@@ -597,7 +610,18 @@ begin
 end;
 
 destructor TAchievementList.Destroy;
+
+  procedure ClearAch;
+  var
+    tmp : TAchievement;
+  begin
+    for tmp in fAchievements do
+      tmp.Free;
+    fAchievements.Clear;
+  end;
+
 begin
+  ClearAch;
   FreeAndNil(fAchievements);
   FreeAndNil(dh);
   inherited;

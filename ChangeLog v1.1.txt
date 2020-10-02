@@ -1,0 +1,7 @@
+- Added new custom ListView and change how game title look like
+- Added 'traffic lights'
+  - Green  for completed
+  - Amber for still in progress
+  - Red for not started
+- Added headers to separte game achievements from DLC achievements
+- Modified SMView to be capable of changing font style and font size.

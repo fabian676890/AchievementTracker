@@ -1,0 +1,5 @@
+- Changed look of whole program
+- Added game details
+- Change traffic lights to show what percentage the game is on
+- Added accounts to the program
+- Added some error checking

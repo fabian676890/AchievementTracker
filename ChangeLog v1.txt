@@ -1,3 +1,4 @@
+v1.0
 - Added DataHandler and DataConnector capable of connecting to a local instance of MySQL database hosted through XAMPP.
 - Provided a Database Schema to import into MySQL containing all necessary 
 - Added capability to display data from database in a listview.
@@ -7,15 +8,26 @@
 - Added a main screen displaying all the games, and a secondary screen showing all the achievements.
 - Added a back button to go inbetween the games screen and achievements screen.
 - Added ability to mark achievements as done/not done.
-
-
-Plans for v1.1
-- Add new custom ListView and change how game title look like
-- Add 'traffic lights', determine if all the achievements for a game are completed then if they are:
+ 
+v1.1
+- Added new custom ListView and change how game title look like
+- Added 'traffic lights'
   - Green  for completed
   - Amber for still in progress
   - Red for not started
-- Possibly add a different view that will support game covers
-- Possibly add headers to separte game achievements from DLC achievements
-- Add sorting to the view
-- Add Filtering to the view
+- Added headers to separte game achievements from DLC achievements
+- Modified SMView to be capable of changing font style and font size.
+
+v1.2
+- Changed look of whole program
+- Added a splashscreen
+- Change program so there are 2 seperate SMViews which means one contains a list of the games that only gets reloaded when a new game or a
+  new platform are selected. The other contains all of the achievements for that game.
+- Added game details
+- Change traffic lights to show what percentage the game is on
+- Added accounts to the program
+- Added some error checking
+
+Plans for v1.3
+- Write mobile application.
+- Write Delphi REST Api.
